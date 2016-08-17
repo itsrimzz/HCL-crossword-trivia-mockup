@@ -1,0 +1,45 @@
+<html ng-app="AngularApp">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>JavaScript Crossword</title>
+<script type="text/javascript" src="assets/js/please-wait.min.js"></script>
+<link type="text/css" href="assets/css/please-wait.css" />   
+<link type="text/css" href="assets/css/styles.css" />
+
+<link rel="stylesheet" type="text/css" href="style.css" />
+    
+    <script>
+         window.loading_screen = window.pleaseWait({
+        logo: "assets/images/logo.png",
+        backgroundColor: '#f46d3b',
+        loadingHtml: "<div class='sk-wandering-cubes'><div class='sk-cube sk-cube1'></div><div class='sk-cube sk-cube2'></div></div>"
+      });
+    </script>
+<script type="text/javascript" src="lib/jquery.min.js"></script>
+<script type="text/javascript" src="lib/jquery.hotkeys.js"></script>
+<script type="text/javascript" src="lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="xWords.js"></script>
+<script type="text/javascript" src="bank.js"></script>
+<script type="text/javascript" src="crossword.js"></script>
+
+<script type="text/javascript">
+  var crossw1rd1;
+  //var crossw1rd2;
+   
+  $(document).ready(function() {
+    crossw1rd1 = new Crossw1rd('container1');
+    crossw1rd1.init('puzzle');
+  });
+    window.loading_screen.finish();
+</script>
+<meta charset="UTF-8">
+</head>
+<body ng-controller="MainCtrl">
+    <div class="inner" ng-view>
+        <div id="container1"></div>
+<br/>
+<div id="container2"></div>
+    </div>
+
+</body>
+</html>
